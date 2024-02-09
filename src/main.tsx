@@ -1,0 +1,44 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.tsx";
+import "./index.css";
+import {
+  Navigate,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
+import { Provider } from "react-redux";
+import Dashboard from "./Components/Dashboard/Dashboard.tsx";
+import Tasks from "./Components/Tasks/Tasks.tsx";
+import FileManagement from "./Components/FileManagement/FileManagement.tsx";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Navigate to={"/dashboard"} />,
+      },
+      {
+        path: "dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "tasks",
+        element: <Tasks />,
+      },
+      {
+        path: "file-management",
+        element: <FileManagement />,
+      },
+    ],
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  // <React.StrictMode>
+  <RouterProvider router={router} />
+  // </React.StrictMode>
+);
