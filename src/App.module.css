@@ -2,8 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 1px;
-  padding: 3px 1px;
+  gap: 10px;
   min-height: 100vh;
 }
 
@@ -13,13 +12,14 @@
   background: rgb(91, 205, 50);
   padding: 16px 8px;
   align-items: center;
-  border-radius: 12px;
+  justify-content: center;
 }
 
 .navBar {
   display: flex;
   width: 100%;
-  gap: 20px;
+  max-width: 1280px;
+  gap: 10px;
   justify-content: space-evenly;
 }
 

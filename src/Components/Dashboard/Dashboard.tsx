@@ -3,20 +3,15 @@ import "chartjs-adapter-moment";
 import { Line, Pie } from "react-chartjs-2";
 import "chart.js/auto";
 import classes from "./Dashboard.module.css";
+import { useAppSelector } from "../../store/hooks";
+import { taskSelector } from "../../store/task-slice";
+import { Status } from "../../store/store.type";
 
-// ChartJS.register(
-//   TimeScale,
-//   CategoryScale,
-//   LinearScale,
-//   PointElement,
-//   LineElement,
-//   PieController,
-//   Title,
-//   Tooltip,
-//   Legend
-// );
+const { GREEN, RED, YELLOW } = Status;
 
 const Dashboard = () => {
+  const projects = useAppSelector(taskSelector);
+
   const options = {
     radius: 0,
     responsive: true,
@@ -74,35 +69,36 @@ const Dashboard = () => {
   };
   return (
     <div className={classes.pie}>
-      {
+      {projects.map((proj) => (
         <Pie
+          key={proj.id}
           data={{
-            labels: ["Employee1", "Employee2", "Employee3"],
+            labels: [YELLOW, RED, GREEN],
             //Assigning the values from data
             datasets: [
               {
-                label: "Completed Tasks",
-                data: ["20", "10", "65"],
+                label: "Total",
+                data: [proj.yellow, proj.red, proj.green],
                 backgroundColor: [
-                  "rgb(255, 99, 132)",
-                  "rgb(54, 162, 235)",
                   "rgb(255, 205, 86)",
+                  "rgb(255, 99, 132)",
+                  "rgb(122, 235, 122)",
                 ],
-                hoverOffset: 10,
+                hoverOffset: 5,
               },
             ],
           }}
           options={{
             responsive: true,
-            maintainAspectRatio: false,
+            maintainAspectRatio: true,
             aspectRatio: 1,
             plugins: {
               legend: { position: "top" },
-              title: { display: true, text: "Employee's Tasks" },
+              title: { display: true, text: proj.name },
             },
           }}
         />
-      }
+      ))}
     </div>
   );
 };
