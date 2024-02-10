@@ -9,10 +9,19 @@
 .navWrapper {
   display: flex;
   width: 100%;
-  background: rgb(91, 205, 50);
+  background: #F4F1F1;
   padding: 16px 8px;
   align-items: center;
   justify-content: center;
+}
+
+.company{
+  display: flex;
+  justify-content: center;
+  padding: 16px 8px;
+  font-size: small;
+  background-color: #1C4E80;
+  color: #F1F0F0;
 }
 
 .navBar {
@@ -42,6 +51,8 @@
 
 .mainContainer {
   padding: 8px;
-  margin: 0 8px;
-  height: 100%;
+  margin: 0 auto;
+  height: 70vh;
+  width: 100%;
+  max-width: 1380px;
 }

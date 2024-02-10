@@ -1,0 +1,37 @@
+.fileWrap {
+  display: flex;
+  height: 100%;
+  border-radius: 12px;
+  background-color: rgba(255, 247, 247, 0.861);
+}
+.action {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #baebef;
+  padding-top: 10px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+.action h3 {
+  text-align: left;
+  padding: 10px 50px 10px 20px;
+}
+.action h5 {
+  font-weight: normal;
+  padding: 2px 10px;
+  cursor: pointer;
+}
+.action h5:hover {
+  background-color: #7c99b7;
+}
+.action h5.active {
+  font-weight: bold;
+}
+
+.files {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}

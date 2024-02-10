@@ -1,5 +1,5 @@
 export type Project = {
-  id: React.Key;
+  projectId: React.Key;
   name: string;
   tasks: Array<Task>;
   yellow: number;
@@ -8,7 +8,7 @@ export type Project = {
 };
 
 export type Task = {
-  id: React.Key;
+  id: number;
   name: string;
   status: Status;
 };

@@ -1,0 +1,72 @@
+.tasks {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  gap: 10px;
+}
+.tasks h3 {
+  font-size: large;
+  font-weight: 600;
+}
+.tasks hr {
+  background-color: black;
+  height: 1px;
+}
+
+.taskDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.task {
+  cursor: pointer;
+  padding: 2px 5px 2px 15px;
+  margin-right: 10px;
+  width: 90%;
+  text-align: left;
+  display: flex;
+}
+.task:hover {
+  background-color: #f4f1f1c8;
+  border-radius: 8px;
+}
+
+.input {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+}
+.input input {
+  display: flex;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  padding: 0 10px;
+}
+.add {
+  width: 100%;
+  margin-top: 15px;
+}
+.addButton {
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: 600;
+  border: none;
+  color: #f4f1f1;
+  background-color: #2d7ac6;
+}
+.cancelButton {
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: 600;
+  border: none;
+  color: #f4f1f1;
+  background-color: #d74f19;
+}

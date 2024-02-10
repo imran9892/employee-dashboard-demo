@@ -9,9 +9,10 @@ import {
 } from "react-router-dom";
 import { Provider } from "react-redux";
 import Dashboard from "./Components/Dashboard/Dashboard.tsx";
-import Tasks from "./Components/Tasks/Tasks.tsx";
 import FileManagement from "./Components/FileManagement/FileManagement.tsx";
 import { store } from "./store/index.ts";
+import Projects from "./Components/Projects/Projects.tsx";
+import Project from "./Components/Projects/Project/Project.tsx";
 
 const router = createBrowserRouter([
   {
@@ -27,8 +28,9 @@ const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: "tasks",
-        element: <Tasks />,
+        path: "projects",
+        element: <Projects />,
+        children: [{ path: ":projectId", element: <Project /> }],
       },
       {
         path: "file-management",

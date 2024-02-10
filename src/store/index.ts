@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import taskReducer from "./task-slice";
+import projectReducer from "./project-slice";
 
 export const store = configureStore({
-  reducer: { taskReducer },
+  reducer: { projectReducer },
 });
 
 export type AppDispatch = typeof store.dispatch;
